@@ -6,67 +6,83 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Qual o melhor país do mundo para morar?
+        enunciado: "Como é sua noite de sono?,
             alternativas: [
+            {   
+            texto:"Boa",
+            afirmação: "afirmação",
+            },
             {
-            alternativa: "Austrália",
-            "Finlandia"
-            }
-            {
-              texto "Australia",
-              afirmação:"afirmação",
-            }
-            ]
-      {
-        enunciado:"Qual a qualidade do seu sono?",
+                texto:"Ruim",
+                afirmação:"afirmação",
+            },
+        ]
+
+    {
+        enunciado: "Sua alimentação é saudavel?",
         alternativas: [
-          {
-          alternativa: "Boa",
-          "Ruim"
-          }
-          {
-            texto "Boa",
-            afirmação:"afirmação",
-          }
-          ]
+            {   
+                texto:"Sim",
+                afirmação: "afirmação",
+                },
+                {
+                    texto:"Não",
+                    afirmação:"afirmação",
+                },
+            ]
+    },
+
+    {
+        enunciado: "Qual é a duração do seu sono?",
+        alternativas: [
+            {   
+                texto:"Mais de 8 horas",
+                afirmação: "afirmação",
+                },
+                {
+                    texto:"Menos de 8 horas",
+                    afirmação:"afirmação",
+                },
+            ]
+    },
+
+    {
+        enunciado: "Qual sua cor preferida?",
+        alternativas: [
+            {   
+                texto:"Azul",
+                afirmação: "afirmação",
+                },
+                {
+                    texto:"Rosa",
+                    afirmação:"afirmação",
+                },
+            ]
     },
     {
-      enunciado: "Qual sua cor favorita?
-      alternativas: [
-      {
-      alternativa: "Azul",
-      "Amarelo"
-      }
-      {
-        texto "Amarelo",
-        afirmação:"afirmação",
-      }
-      ]
-{
-  enunciado: "Qual a cidade brasileira mais ecologica?
-  alternativas: [
-  {
-  alternativa: "São Paulo",
-  "Curitiba"
-  }
-  {
-    texto "Curitiba",
-    afirmação:"afirmação",
-  }
-  ]
-{
-        enunciado: "Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda de uma IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz?",
+        enunciado: "Quantos litros de agua você?",
         alternativas: [
-           "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-            "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial."
+            {   
+                texto:"Mais de 3 litros ",
+                afirmação: "afirmação",
+                },
+                {
+                    texto:"Menos de 3 litros ",
+                    afirmação:"afirmação",
+                },
         ]
     },
 ];
 
 let atual = 0;
 let perguntaAtual;
+let historiaFinal ="";
 
 function mostraPergunta() {
+
+
+
+  
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     mostraAlternativas();
@@ -75,9 +91,14 @@ function mostraPergunta() {
 function mostraAlternativas() {
     for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa;
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click",()> respostaSelecionada(alternativa));   
         caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
-
-mostraPergunta();
+function respostaSelecionada(opcaoSelecinada){
+    cost afirmacoes = opcaoSelecionada.afirmacoes;
+    atual++;
+    mostraPergunta();
+}
+mostraPergunta
