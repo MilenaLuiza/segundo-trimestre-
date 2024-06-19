@@ -6,15 +6,15 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Como é sua noite de sono?,
+        enunciado: "Qual o melhor pais para morar" ?,
             alternativas: [
             {   
-            texto:"Boa",
-            afirmação: "afirmação",
+            texto:"Brasil",
+            afirmação: "EUA",
             },
             {
-                texto:"Ruim",
-                afirmação:"afirmação",
+                texto:"Brasil",
+                afirmação:"EUA",
             },
         ]
 
@@ -79,12 +79,13 @@ let perguntaAtual;
 let historiaFinal ="";
 
 function mostraPergunta() {
-
-
-
-  
+if(atual >= perguntas.lenght){
+  mostraResultado();
+  return;
+}
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.textContent="";
     mostraAlternativas();
 }
 
@@ -98,7 +99,11 @@ function mostraAlternativas() {
 }
 function respostaSelecionada(opcaoSelecinada){
     cost afirmacoes = opcaoSelecionada.afirmacoes;
+    historiaFinal+= afirmacoes +"";
     atual++;
     mostraPergunta();
 }
+function mostraResultado (){}
+caixaPerguntas.textContent= 
+
 mostraPergunta
