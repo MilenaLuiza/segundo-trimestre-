@@ -76,7 +76,7 @@ const perguntas = [
 
 let atual = 0;
 let perguntaAtual;
-let historiaFinal ="";
+let historiaFinal =";
 
 function mostraPergunta() {
 if(atual >= perguntas.lenght){
@@ -85,7 +85,7 @@ if(atual >= perguntas.lenght){
 }
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.textContent="";
+    caixaAlternativas.textContent ="";
     mostraAlternativas();
 }
 
